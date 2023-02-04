@@ -1,7 +1,8 @@
 import React from 'react';
+import Heading from '../components/common/Heading';
 
 const ErrorPage = () => {
-  return (<h2>404 Error</h2>);
+  return (<Heading pageTitle={'Something went wrong, sorry!'} />);
 };
 
 export default ErrorPage;

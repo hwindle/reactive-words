@@ -1,7 +1,8 @@
 import React from 'react';
+import Heading from '../components/common/Heading';
 
 const Scrabble = () => {
-  return (<h2>Scrabble</h2>);
+  return (<Heading pageTitle={'Scrabble'} />);
 };
 
 export default Scrabble;

@@ -1,7 +1,8 @@
 import React from 'react';
+import Heading from '../components/common/Heading';
 
 const WordMeaning = () => {
-  return (<h2>Word Meaning</h2>);
+  return (<Heading pageTitle={'Word Meaning'} />);
 };
 
 export default WordMeaning;

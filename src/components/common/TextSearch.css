@@ -1,0 +1,28 @@
+form {
+  max-width: 70vw;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+svg {
+  margin-left: -15px;
+  fill: var(--off-white);
+}
+
+button[type='submit'] {
+  border: 0;
+  background-color: var(--coffee);
+  margin-right: 3px;
+}
+
+button[type='submit']:hover,
+button[type='submit']:focus {
+  background-color: var(--off-black);
+  color: white;
+} 
+
+div#dict-submit {
+  flex-direction: row;
+  align-items: center;
+}

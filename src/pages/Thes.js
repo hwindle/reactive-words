@@ -1,7 +1,8 @@
 import React from 'react';
+import Heading from '../components/common/Heading';
 
 const Thes = () => {
-  return (<h2>Thesaurus</h2>);
+  return (<Heading pageTitle={'Thesaurus'} />);
 };
 
 export default Thes;
