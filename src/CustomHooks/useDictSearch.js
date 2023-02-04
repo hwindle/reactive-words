@@ -8,10 +8,10 @@ const useDictSearch = (url) => {
   // updates on url parameter change
   useEffect(() => {
     // an IIFE immediately invoked function expression
-    // that is used to isolate variable scope I think
+    // that is used to isolate variable scope and for async keyword
     (async function() {
       const headers = { headers: 
-        { authorization: `${process.env.OWL_DICT_API_KEY}` } 
+        { Authorization: `${process.env.OWL_DICT_API_KEY}` } 
       };
       try {
         // set a progress bar or loading thing here
