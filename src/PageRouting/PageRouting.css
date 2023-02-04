@@ -1,0 +1,30 @@
+nav#words-main-nav {
+  width: 100%;
+}
+
+nav#words-main-nav > ul {
+  background-color: var(--off-white);
+  border: 0;
+  padding: 10px 0 0 10px;
+}
+
+nav#words-main-nav > ul > li.tabs-title {
+  border-top: 3px solid var(--light-beige);
+  border-right: 2px solid var(--light-beige);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+nav#words-main-nav > ul > li.tabs-title a,
+nav#words-main-nav > ul > li.tabs-title a:visited {
+  border-radius: 7px 7px 0 0;
+  font-size: 1.5rem;
+  color: var(--coffee);
+}
+
+nav#words-main-nav > ul > li.tabs-title a:hover, 
+nav#words-main-nav > ul > li.tabs-title a:focus {
+  background-color: var(--light-beige);
+  color: var(--off-black);
+  text-decoration: underline;
+  text-decoration-color: var(--orange);
+}
