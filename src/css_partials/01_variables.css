@@ -1,0 +1,14 @@
+/*** CSS variables ***/
+:root {
+  font-size: 16px;
+  
+  --heading-font: Georgia, 'Times New Roman', Times, serif;
+  --body-font: Georgia;
+  --orange: rgb(211, 138, 19);
+  --off-white: rgb(255, 249, 213);
+  --light-beige: rgb(248, 219, 171);
+  --coffee: rgb(111, 82, 56);
+  --off-black: rgb(26, 23, 18);
+  --border-radius: 10px;
+  --default-padding: 1rem;
+}
