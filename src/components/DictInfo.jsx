@@ -1,0 +1,23 @@
+import React from 'react';
+import ErrorMsg from './ErrorMsg';
+
+const DictInfo = (props) => {
+  return (
+    <section>
+      <h3>Word <span className='emoji'>Emoji</span></h3>
+      <div className='two-columns'>
+        <article>
+          <p>Pronunciation: </p>
+          <p>Type of word: noun</p>
+          <p>Definition:</p>
+          <p>Example in a sentence: </p>
+        </article>
+        <figure>
+          <img src='#' alt='word' />
+        </figure>
+      </div>
+    </section>
+  );
+};
+
+export default DictInfo;
