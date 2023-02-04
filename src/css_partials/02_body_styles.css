@@ -1,0 +1,8 @@
+body {
+  height: 100vh;
+  font-family: var(--body-font);
+  font-size: 1rem;
+  background-color: var(--coffee);
+  background-image: url('./pics/wood_planks.jpg');
+  background-size: cover;
+}
