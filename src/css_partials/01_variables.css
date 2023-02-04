@@ -3,7 +3,7 @@
 :root {
   font-size: 16px;
 
-  --heading-font: 'DM Serif', Georgia, 'Times New Roman', Times, serif;
+  --heading-font: 'DM Serif', Georgia, 'Times New Roman', 'Liberation serif', Times, serif;
   --body-font: 'Libre Baskerville', Georgia, serif;
   --orange: rgb(211, 138, 19);
   --off-white: rgb(255, 249, 213);
