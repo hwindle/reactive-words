@@ -1,10 +1,10 @@
 import './App.css';
+import PageRouting from './PageRouting/PageRouting';
 
 function App() {
   return (
     <div className="grid-container">
-        <h1 className="text-center">Hello World!</h1>
-        <p className="text-right">This is my first React App.</p>
+      <PageRouting />
     </div>
   );
 }
