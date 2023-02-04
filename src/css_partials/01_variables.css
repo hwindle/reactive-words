@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Libre+Baskerville&display=swap');
 /*** CSS variables ***/
 :root {
   font-size: 16px;
-  
-  --heading-font: Georgia, 'Times New Roman', Times, serif;
-  --body-font: Georgia;
+
+  --heading-font: 'DM Serif', Georgia, 'Times New Roman', Times, serif;
+  --body-font: 'Libre Baskerville', Georgia, serif;
   --orange: rgb(211, 138, 19);
   --off-white: rgb(255, 249, 213);
   --light-beige: rgb(248, 219, 171);
