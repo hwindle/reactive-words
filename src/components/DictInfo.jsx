@@ -2,6 +2,10 @@ import React from 'react';
 import ErrorMsg from './ErrorMsg';
 
 const DictInfo = (props) => {
+  if (props.dictInfo === {}) {
+    return <ErrorMsg errorText={'No word found'} />;
+  }
+
   return (
     <section>
       <h3>Word <span className='emoji'>Emoji</span></h3>

@@ -2,14 +2,15 @@ import './TextSearch.css';
 
 const TextSearch = (props) => {
   return (
-    <form>
+    <form onSubmit={props.onSubmitHandler}>
       <div className='input-group'>
         <span className='input-group-label'>EN</span>
         <input
           className='input-group-field {props.styleName}'
           type='text'
           id='text-search'
-          placeholder={props.placeholder}
+          placeholder={props.placeholder} 
+          onChange={props.onChangeHandler}
           required
         />
         <div className='input-group-button' id='dict-submit'>
