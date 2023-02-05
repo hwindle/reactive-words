@@ -1,9 +1,9 @@
 const ErrorMsg = (props) => {
   return (
-    <div class='ui icon message'>
-      <i class='inbox icon'></i>
-      <div class='content'>
-        <div class='header'>Error</div>
+    <div className='ui icon message'>
+      <i className='bug icon'></i>
+      <div className='content'>
+        <div className='header'>Error</div>
         <p>{props.errorText}</p>
       </div>
     </div>

@@ -3,11 +3,10 @@ import Heading from '../components/common/Heading';
 import TextSearch from '../components/common/TextSearch';
 import DictInfo from '../components/DictInfo';
 import ErrorMsg from '../components/ErrorMsg';
-import debounce from '../components/common/debounce';
 
 const Dict = () => {
   // state
-  const [searchWord, setSearchWord] = useState('');
+  const [searchWord, setSearchWord] = useState('dictionary');
   
   // functions
   const onSearchChange = (event) => {
@@ -28,7 +27,7 @@ const Dict = () => {
       <TextSearch
         styleName={'words-text-search'}
         placeholder={'Type a word here'}
-        onChangeHandler={debounce(onSearchChange)}
+        onChangeHandler={onSearchChange}
         onSubmitHandler={handleSubmit}
       />
       <DictInfo searchWord={searchWord} />
