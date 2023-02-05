@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Heading from '../components/common/Heading';
 import ScrabbleInput from '../components/common/ScrabbleInput';
 import ErrorMsg from '../components/ErrorMsg';
+import ShuffleLetters from '../components/ShuffleLetters';
 
 const Scrabble = () => {
   const [searchWord, setSearchWord] = useState('react');
@@ -32,6 +33,7 @@ const Scrabble = () => {
         onChangeHandler={onInputChange}
         onSubmitHandler={handleSubmit}
       />
+      <ShuffleLetters searchWord={searchWord} />
       {/* Display error message box */}
       {errorMsg && <ErrorMsg errorText={errorMsg} />}
     </main>
