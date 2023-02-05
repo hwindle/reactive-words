@@ -11,29 +11,24 @@ const DictInfo = (props) => {
   //set WordInfo - useEffect custom hook
   const { data, error } = useDictSearch(baseUrl + searchWord);
 
-  // if (!firstLoad && searchWord === '') {
-  //   return <ErrorMsg errorText={'No word typed in.' + error} />;
-  // } else if (!data) {
-  //   return (
-  //     <ErrorMsg errorText={'No words found in dictionary. Sorry' + error} />
-  //   );
-  // }
   return (
     <section>
       <h3>
-        {'' || data.word} <span className='emoji'>{data.definitions.emoji}</span>
+        {data?.word} <span className='emoji'>{data?.definitions?.emoji}</span>
       </h3>
       <div className='two-columns'>
         <article>
-          <p>Pronunciation: {'' || data.pronunciation}</p>
-          <p>Type of word: {'' || data.definitions.type}</p>
-          <p>Definition: {'' || data.definitions.definition}</p>
-          <p>Example in a sentence: {'' || data.definitions.example}</p>
+          {/* data?.obj-key doesn't return an undefined key error
+           if the item isn't there, or the data hasn't been returned */}
+          <p>Pronunciation: {data?.pronunciation}</p>
+          <p>Type of word: {data?.definitions?.type}</p>
+          <p>Definition: {data?.definitions?.definition}</p>
+          <p>Example in a sentence: {data?.definitions?.example}</p>
         </article>
         <figure>
-          <img src={'' || data.definitions.image_url} alt={'' || data.word} />
+          <img src={data?.definitions?.image_url} alt={data?.word} />
         </figure>
-        <ErrorMsg errorText={error} />
+        {error ? <ErrorMsg errorText={error} /> : ''}
       </div>
     </section>
   );

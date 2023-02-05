@@ -11,7 +11,7 @@ const useDictSearch = (url) => {
     // that is used to isolate variable scope and for async keyword
     (async function() {
       const headers = { headers: 
-        { Authorization: `${process.env.OWL_DICT_API_KEY}` } 
+        { Authorization: `${process.env.REACT_APP_OWL_DICT_API_KEY}` } 
       };
       try {
         // set a progress bar or loading thing here
