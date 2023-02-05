@@ -14,7 +14,7 @@ const DictInfo = (props) => {
 
   if (data[0]) {
     return <DisplayDictData data={data} error={error} />; 
-  } else if (data.message) {
+  } else if (error) {
     return <ErrorMsg errorText={'Word not found'} />;
   }
 };

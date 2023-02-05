@@ -8,6 +8,7 @@ const Dict = () => {
   // state
   const [searchWord, setSearchWord] = useState('react');
   const [textSearchValue, setTextSearchValue] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
 
   // functions
   const onSearchChange = (event) => {
@@ -18,7 +19,7 @@ const Dict = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (textSearchValue === '') {
-      return <ErrorMsg errorText={'No search word entered.'} />;
+      setErrorMsg('No search word entered.');
     } else {
       setSearchWord(textSearchValue);
     }
@@ -34,6 +35,8 @@ const Dict = () => {
         onSubmitHandler={handleSubmit}
       />
       <DictInfo searchWord={searchWord} />
+      {/* Display error message box */}
+      {errorMsg !== '' ? <ErrorMsg errorText={errorMsg} /> : ''}
     </main>
   );
 };

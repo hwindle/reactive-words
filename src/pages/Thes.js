@@ -1,8 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Heading from '../components/common/Heading';
 import TextSearch from '../components/common/TextSearch';
+import ErrorMsg from '../components/ErrorMsg';
 
 const Thes = () => {
+  // state
+  const [searchWord, setSearchWord] = useState('react');
+  const [textSearchValue, setTextSearchValue] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
+
+  // functions
+  const onSearchChange = (event) => {
+    const value = event.target.value.toLowerCase();
+    setTextSearchValue(value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (textSearchValue === '') {
+      setErrorMsg('No search word entered.');
+    } else {
+      setSearchWord(textSearchValue);
+    }
+  };
+
+
   return (
     <main>
       <Heading pageTitle={'Thesaurus'} />
@@ -12,6 +34,9 @@ const Thes = () => {
         onChangeHandler={onSearchChange}
         onSubmitHandler={handleSubmit}
       />
+      {/* Display error message box */}
+      <div>{searchWord}</div>
+      {errorMsg !== '' ? <ErrorMsg errorText={errorMsg} /> : ''}
     </main>
   );
 };
