@@ -6,7 +6,7 @@ import useThesaurus from '../CustomHooks/useThesaurus';
 
 const ThesInfo = (props) => {
   // word to search for synonyms
-  const { searchWord } = props;
+  const searchWord = props.searchWord;
   // atonyms etc
   const [antonyms, setAntonyms] = useState([]);
   // similar  words - synonyms
@@ -32,7 +32,7 @@ const ThesInfo = (props) => {
 
   if (error) {
     setErrorMsg(() => {'Error on MW API fetch: '});
-    //console.log('hello from error');
+    console.log('hello from error');
   }
   //console.log('hello outside of error, before return');
 

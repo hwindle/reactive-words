@@ -13,7 +13,9 @@ const Thes = () => {
   // functions
   const onSearchChange = (event) => {
     const value = event.target.value.toLowerCase();
-    setTextSearchValue(value);
+    if (value.length >= 3) {
+      setTextSearchValue(value);
+    }
   };
 
   const handleSubmit = (e) => {
