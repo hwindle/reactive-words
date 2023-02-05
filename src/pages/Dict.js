@@ -6,18 +6,21 @@ import ErrorMsg from '../components/ErrorMsg';
 
 const Dict = () => {
   // state
-  const [searchWord, setSearchWord] = useState('dictionary');
-  
+  const [searchWord, setSearchWord] = useState('react');
+  const [textSearchValue, setTextSearchValue] = useState('');
+
   // functions
-  // const onSearchChange = (event) => {
-  //   const searchTerm = event.target.value.toLowerCase();
-  //   setSearchWord(searchTerm);
-  // };
+  const onSearchChange = (event) => {
+    const value = event.target.value.toLowerCase();
+    setTextSearchValue(value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (searchWord === '') {
+    if (textSearchValue === '') {
       return <ErrorMsg errorText={'No search word entered.'} />;
+    } else {
+      setSearchWord(textSearchValue);
     }
   };
 
@@ -27,7 +30,7 @@ const Dict = () => {
       <TextSearch
         styleName={'words-text-search'}
         placeholder={'Type a word here'}
-        // onChangeHandler={onSearchChange}
+        onChangeHandler={onSearchChange}
         onSubmitHandler={handleSubmit}
       />
       <DictInfo searchWord={searchWord} />

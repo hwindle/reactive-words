@@ -1,5 +1,6 @@
 #app {
-  height: 80vh;
+  min-height: 80vh;
+  height: auto;
   max-width: 1200px;
   background-color: var(--light-beige);
 
