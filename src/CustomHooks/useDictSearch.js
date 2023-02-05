@@ -18,7 +18,7 @@ const useDictSearch = (baseUrl, word) => {
         setData(response.data);
       } catch (error) {
         console.error('Error from dict - Axios', error);
-        setData([{word: 'Word not found'}])
+        setData([{word: 'Word not found'}]);
         setError(error);
       } finally {
         // set loading bit to false

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Heading from '../components/common/Heading';
 import TextSearch from '../components/common/TextSearch';
 import ErrorMsg from '../components/ErrorMsg';
+import ThesInfo from '../components/ThesInfo';
 
 const Thes = () => {
   // state
@@ -34,8 +35,8 @@ const Thes = () => {
         onChangeHandler={onSearchChange}
         onSubmitHandler={handleSubmit}
       />
+      <ThesInfo searchWord={searchWord} />
       {/* Display error message box */}
-      <div>{searchWord}</div>
       {errorMsg !== '' ? <ErrorMsg errorText={errorMsg} /> : ''}
     </main>
   );
