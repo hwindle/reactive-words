@@ -10,7 +10,7 @@ const TextSearch = (props) => {
           type='text'
           id='text-search'
           placeholder={props.placeholder} 
-          onChange={props.onChangeHandler}
+          // onChange={props.onChangeHandler}
           required
         />
         <div className='input-group-button' id='dict-submit'>

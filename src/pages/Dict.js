@@ -9,10 +9,10 @@ const Dict = () => {
   const [searchWord, setSearchWord] = useState('dictionary');
   
   // functions
-  const onSearchChange = (event) => {
-    const searchTerm = event.target.value.toLowerCase();
-    setSearchWord(searchTerm);
-  };
+  // const onSearchChange = (event) => {
+  //   const searchTerm = event.target.value.toLowerCase();
+  //   setSearchWord(searchTerm);
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,7 +27,7 @@ const Dict = () => {
       <TextSearch
         styleName={'words-text-search'}
         placeholder={'Type a word here'}
-        onChangeHandler={onSearchChange}
+        // onChangeHandler={onSearchChange}
         onSubmitHandler={handleSubmit}
       />
       <DictInfo searchWord={searchWord} />
