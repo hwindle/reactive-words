@@ -3,26 +3,12 @@ import ErrorMsg from './ErrorMsg';
 
 const DisplayDictData = (props) => {
   let {data, error} = props;
-  // if (typeof(data) === Object) {
-  //   data = Object.entries(data);
-  //   console.dir(data);
-  // }
 
-  // const meanings = {};
-  // const definArray = [];
-  try {
-    const meanings = data[0].meanings[0];
-    const definArray = meanings?.definitions;
-    //console.log(typeof(definArray));
-  } catch (err) {
-    console.info('Another error');
-  }
-  
 
   return (
     <section className='card'>
       <h3 style={{textAlign: 'center', fontFamily: 'var(--body-font)'}}>
-        {data[0]?.word} 
+        {data[0]?.word.toTitleCase} 
       </h3>
       <div style={{minWidth: '90%', maxWidth: '900px', margin: '2rem auto'}}>
         <article>

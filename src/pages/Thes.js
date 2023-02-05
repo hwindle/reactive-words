@@ -6,7 +6,7 @@ import ThesInfo from '../components/ThesInfo';
 
 const Thes = () => {
   // state
-  const [searchWord, setSearchWord] = useState('');
+  const [searchWord, setSearchWord] = useState('programmer');
   const [textSearchValue, setTextSearchValue] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -22,6 +22,7 @@ const Thes = () => {
     e.preventDefault();
     if (textSearchValue === '') {
       setErrorMsg('No search word entered.');
+      setSearchWord('react');
     } else {
       setSearchWord(textSearchValue);
     }
@@ -37,9 +38,9 @@ const Thes = () => {
         onChangeHandler={onSearchChange}
         onSubmitHandler={handleSubmit}
       />
-      <ThesInfo searchWord={searchWord} />
+      <ThesInfo textField={searchWord} />
       {/* Display error message box */}
-      {errorMsg !== '' ? <ErrorMsg errorText={errorMsg} /> : ''}
+      {errorMsg && <ErrorMsg errorText={errorMsg} />}
     </main>
   );
 };
