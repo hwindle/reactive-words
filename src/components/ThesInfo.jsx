@@ -8,7 +8,7 @@ const ThesInfo = (props) => {
   // word to search for synonyms
   const { searchWord } = props;
   // atonyms etc
-  const [antonyms, setAntonyms] = useState({});
+  const [antonyms, setAntonyms] = useState([]);
   // similar  words - synonyms
   const [synWords, setSynWords] = useState([]); 
   // error msgs
@@ -16,24 +16,30 @@ const ThesInfo = (props) => {
 
   const url = `https://www.dictionaryapi.com/api/v3/references/ithesaurus/json/${searchWord}?key=${process.env.REACT_APP_MW_THES_API_KEY}`;
   const { data, loading, error } = useThesaurus(url);
-  const {meta: thesData} = data; 
+  //const {meta: thesData} = data; 
   // get synonyms from data structure returned
-  const { syns, ants } = thesData;
-  if (syns) {
-    setSynWords([...syns]);
-  }
-  if (ants) {
-    setAntonyms([...ants]);
+  try {
+    const { syns, ants } = data[0]?.meta;
+    if (syns !== undefined) {
+      setSynWords((prev) => (syns));
+    }
+    if (ants !== undefined) {
+      setAntonyms((prev) => (ants));
+    }
+  } catch {
+    console.log('Still loading data...');
   }
 
   if (error) {
-    setErrorMsg('Error on MW API fetch: ' + error);
+    setErrorMsg(() => {'Error on MW API fetch: '});
+    //console.log('hello from error');
   }
+  //console.log('hello outside of error, before return');
 
   return (
     <section className='card'>
       <h3 style={{textAlign: 'center', fontFamily: 'var(--body-font)'}}>
-        {thesData?.id.toTitleCase()} 
+        {searchWord.toTitleCase} 
       </h3>
       <div style={{minWidth: '90%', maxWidth: '900px', margin: '2rem auto'}}>
         {loading ? <p>Words Loading</p> : ''}

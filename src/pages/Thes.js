@@ -6,7 +6,7 @@ import ThesInfo from '../components/ThesInfo';
 
 const Thes = () => {
   // state
-  const [searchWord, setSearchWord] = useState('react');
+  const [searchWord, setSearchWord] = useState('');
   const [textSearchValue, setTextSearchValue] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 

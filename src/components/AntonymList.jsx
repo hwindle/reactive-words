@@ -1,7 +1,10 @@
 import React from 'react';
 
 const AntonymList = (props) => {
-  const [words] = props.antonyms;
+  let [words] = props.antonyms;
+  if (words === undefined) {
+    words = ['No search word entered'];
+  }
 
   return (
     <div>

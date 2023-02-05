@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const useThesaurus = (url) => {
   // console.log(url);
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   // updates on url searchword GET parameter change
@@ -26,8 +26,6 @@ const useThesaurus = (url) => {
   }, [url]);
 
   return { data, loading, error };
-
-
 };
 
 export default useThesaurus;

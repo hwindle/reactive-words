@@ -1,7 +1,10 @@
 import React from 'react';
 
 const SynonymList = (props) => {
-  const [words] = props.synWords;
+  let [words] = props.synWords;
+  if (words === undefined) {
+    words = ['No search word entered'];
+  }
 
   return (
     <div>
