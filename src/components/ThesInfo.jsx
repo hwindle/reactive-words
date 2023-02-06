@@ -58,8 +58,5 @@ const ThesInfo = (props) => {
   );
 };
 
-<<<<<<< HEAD
-=======
 ThesInfo.whyDidYouRender = true;
->>>>>>> dev
 export default ThesInfo;
