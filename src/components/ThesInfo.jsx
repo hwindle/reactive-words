@@ -51,4 +51,5 @@ const ThesInfo = (props) => {
   );
 };
 
+ThesInfo.whyDidYouRender = true;
 export default ThesInfo;
