@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ErrorMsg from './ErrorMsg';
 import SynonymList from './SynonymList';
 import AntonymList from './AntonymList';
@@ -15,27 +15,33 @@ const ThesInfo = (props) => {
   const [errorMsg, setErrorMsg] = useState('');
   
 
-  const { data, loading, error } = useThesaurus(searchWord);
-  //const {meta: thesData} = data;
-  // get synonyms from data structure returned
-  try {
-    const { syns, ants } = data[0]?.meta;
-    if (syns !== undefined) {
-      //console.log(typeof(syns))
-      setSynWords(syns);
-    }
-    if (ants !== undefined) {
-      setAntonyms(ants);
-    }
-  } catch {
-    console.log('Still loading data...');
-  }
+  const url = `https://www.dictionaryapi.com/api/v3/references/ithesaurus/json/${searchWord}?key=${process.env.REACT_APP_MW_THES_API_KEY}`;
+  const { data, loading, error } = useThesaurus(url);
 
-  if (error) {
-    setErrorMsg(() => {
-      'Error on MW API fetch: ';
-    });
-  }
+  useEffect(() => {
+    // get synonyms from data structure returned
+    try {
+      const { syns, ants } = data[0]?.meta;
+      if (syns !== undefined) {
+        console.dir(syns.flat());
+        setSynWords(() => syns.flat());
+      }
+      if (ants !== undefined) {
+        console.dir(ants.flat());
+        setAntonyms(() => ants.flat());
+      }
+    } catch {
+      console.log('Still loading data...');
+    }
+
+    if (error) {
+      setErrorMsg(() => {
+        'Error on MW API fetch: ';
+      });
+      console.log('hello from error');
+    }
+    //console.log('hello outside of error, before return');
+  }, [data, error]);
 
   return (
     <section className='card'>
@@ -52,4 +58,8 @@ const ThesInfo = (props) => {
   );
 };
 
+<<<<<<< HEAD
+=======
+ThesInfo.whyDidYouRender = true;
+>>>>>>> dev
 export default ThesInfo;

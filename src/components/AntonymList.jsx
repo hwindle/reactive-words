@@ -10,7 +10,7 @@ const AntonymList = (props) => {
     <div>
       <h4>Dissimilar Words</h4>
       <ul>
-        {Object.values(words).map((word, i) => {
+        {words?.map((word, i) => {
           return <li key={i}>{word}</li>
         })}
       </ul>
