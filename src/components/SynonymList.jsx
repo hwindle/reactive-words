@@ -1,8 +1,8 @@
 import React from 'react';
 
 const SynonymList = (props) => {
-  let [words] = props.synWords;
-  if (words === undefined) {
+  const words = props.synWords;
+  if (words === []) {
     words = ['No search word entered'];
   }
 
@@ -10,7 +10,7 @@ const SynonymList = (props) => {
     <div>
       <h4>Similar Words</h4>
       <ol>
-        {words.map((word, i) => {
+        {words?.map((word, i) => {
           return <li key={i}>{word}</li>
         })}
       </ol>

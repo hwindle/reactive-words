@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AntonymList = (props) => {
-  let [words] = props.antonyms;
+  const words = props.antonyms;
   if (words === undefined) {
     words = ['No search word entered'];
   }
@@ -10,7 +10,7 @@ const AntonymList = (props) => {
     <div>
       <h4>Dissimilar Words</h4>
       <ul>
-        {words.map((word, i) => {
+        {words?.map((word, i) => {
           return <li key={i}>{word}</li>
         })}
       </ul>
