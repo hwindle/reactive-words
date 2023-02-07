@@ -35,7 +35,7 @@ const Scrabble = () => {
       />
       {/* Display error message box */}
       {errorMsg && <ErrorMsg errorText={errorMsg} />}
-      {/* <ShuffleLetters searchWord={searchWord} /> */}
+      <ShuffleLetters searchWord={searchWord} />
     </main>
   );
 };
