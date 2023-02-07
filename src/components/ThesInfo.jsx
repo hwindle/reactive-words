@@ -16,7 +16,7 @@ const ThesInfo = (props) => {
   
 
   const url = `https://www.dictionaryapi.com/api/v3/references/ithesaurus/json/${searchWord}?key=${process.env.REACT_APP_MW_THES_API_KEY}`;
-  const { data, loading, error } = useThesaurus(url);
+  const { data, loading, error } = useThesaurus(searchWord);
 
   useEffect(() => {
     // get synonyms from data structure returned

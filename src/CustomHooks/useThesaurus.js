@@ -11,6 +11,7 @@ const useThesaurus = (searchWord) => {
   const baseUrl = `https://www.dictionaryapi.com/api/v3/references/ithesaurus/json/`;
   const key = `?key=${process.env.REACT_APP_MW_THES_API_KEY}`;
   const url = baseUrl + searchWord + key;
+  console.log(url);
 
   useEffect(() => {
     (async function () {
