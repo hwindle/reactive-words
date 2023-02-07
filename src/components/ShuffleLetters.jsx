@@ -11,20 +11,24 @@ const ShuffleLetters = (props) => {
   const [shuffleArr, setShuffleArr] = useState([]);
 
   const letterShuffler = useMemo(() => {
-    const newArr = firstLetterSet.map((setOfLetters) => {
+    firstLetterSet.forEach((setOfLetters) => {
       // sorts the array in a different way each time
       // may only work for numbers. Otherwise, use custom
       // sort function
-      const copyLetters = [...setOfLetters];
-      copyLetters.sort(() => Math.random() - 0.5);
-      return copyLetters;
+      let two2Array = [];
+      for (let i = 0; i < setOfLetters.length; i++) {
+        const copyLetters = [...setOfLetters];
+        copyLetters.sort(() => Math.random() - 0.5);
+        console.dir(copyLetters);
+        two2Array.push(copyLetters);
+        setShuffleArr(two2Array);
+        console.dir('shuffle', shuffleArr);
+      }
     });
-    console.dir(newArr);
-    setShuffleArr((prev) => [...prev], newArr);
   }, [firstLetterSet]);
 
   useEffect(() => {
-    const strArr = searchWord.split('');
+    const strArr = searchWord.split();
     setFirstLetterSet([...strArr]);
     // letterShuffler();
   }, [searchWord, letterShuffler]);
@@ -32,12 +36,12 @@ const ShuffleLetters = (props) => {
   return (
     <div>
       <h3>Shuffled Letters</h3>
-      <table>
+      <table id="scrabble-letter-array">
         {!searchWord && <ErrorMsg errorText={'No scrabble letters entered'} />}
-        {shuffleArr && shuffleArr.map((oneArr) => oneArr)
+        {shuffleArr && shuffleArr.map(oneArr => oneArr)
           .map((letter, i) => (
             <tr>
-              <td key={i}>{letter}</td>
+              <td key={i} className='scrabble-mixed-up'>{letter}</td>
             </tr>
           ))}
       </table>
