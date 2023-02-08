@@ -2,39 +2,46 @@ import React, { useEffect, useState, useMemo } from 'react';
 import ErrorMsg from './ErrorMsg';
 
 const ShuffleLetters = (props) => {
-  const { searchWord } = props;
+  let { searchWord } = props;
+  if (!searchWord) {
+    searchWord = 'Enter something';
+  }
 
   const [firstLetterSet, setFirstLetterSet] = useState([]);
   const [shuffleArr, setShuffleArr] = useState([]);
 
-  useEffect(() => {
-    const strArr = searchWord.split('');
-    setFirstLetterSet([...strArr]);
-    savedShuffles();
-  }, [searchWord]);
-
-  const letterShuffler = () => {
-    const newArr = firstLetterSet.map((setOfLetters) => {
-      const newArr = setOfLetters.sorted(() => Math.random() - 0.5);
-      return newArr;
+  const letterShuffler = useMemo(() => {
+    firstLetterSet.forEach((setOfLetters) => {
+      // sorts the array in a different way each time
+      // may only work for numbers. Otherwise, use custom
+      // sort function
+      let two2Array = [];
+      for (let i = 0; i < setOfLetters.length; i++) {
+        const copyLetters = [...setOfLetters];
+        copyLetters.sort(() => Math.random() - 0.5);
+        console.dir(copyLetters);
+        two2Array.push(copyLetters);
+        setShuffleArr(two2Array);
+        console.dir('shuffle', shuffleArr);
+      }
     });
-    setShuffleArr((prev) => [...prev], newArr);
-  };
+  }, [firstLetterSet]);
 
-  const savedShuffles = useMemo(() => {
-    letterShuffler();
-  }, [searchWord]);
+  useEffect(() => {
+    const strArr = searchWord.split();
+    setFirstLetterSet([...strArr]);
+    // letterShuffler();
+  }, [searchWord, letterShuffler]);
 
   return (
     <div>
       <h3>Shuffled Letters</h3>
-      <table>
-        {!shuffleArr ? <ErrorMsg errorText={'No scrabble letters entered'} /> : ''}
-        {shuffleArr && shuffleArr
-          .forEach((oneArr) => oneArr)
+      <table id="scrabble-letter-array">
+        {!searchWord && <ErrorMsg errorText={'No scrabble letters entered'} />}
+        {shuffleArr && shuffleArr.map(oneArr => oneArr)
           .map((letter, i) => (
             <tr>
-              <td key={i}>{letter}</td>
+              <td key={i} className='scrabble-mixed-up'>{letter}</td>
             </tr>
           ))}
       </table>

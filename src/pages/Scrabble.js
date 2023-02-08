@@ -5,12 +5,12 @@ import ErrorMsg from '../components/ErrorMsg';
 import ShuffleLetters from '../components/ShuffleLetters';
 
 const Scrabble = () => {
-  const [searchWord, setSearchWord] = useState('react');
+  const [searchWord, setSearchWord] = useState('');
   const [textSearchValue, setTextSearchValue] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
-   // functions
-   const onInputChange = (event) => {
+  // functions
+  const onInputChange = (event) => {
     const value = event.target.value.toLowerCase();
     setTextSearchValue(value);
   };
@@ -33,9 +33,9 @@ const Scrabble = () => {
         onChangeHandler={onInputChange}
         onSubmitHandler={handleSubmit}
       />
-      <ShuffleLetters searchWord={searchWord} />
       {/* Display error message box */}
       {errorMsg && <ErrorMsg errorText={errorMsg} />}
+      <ShuffleLetters searchWord={searchWord} />
     </main>
   );
 };
