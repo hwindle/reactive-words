@@ -10,12 +10,14 @@ const DictInfo = (props) => {
   // call hook methods at the top level of a component
   const baseUrl = 'https://api.dictionaryapi.dev/api/v2/entries/en/';
   //set WordInfo - useEffect custom hook
-  const { data, error } = useDictSearch(baseUrl, searchWord);
+  const { data, loading, error } = useDictSearch(baseUrl, searchWord);
 
-  if (data[0]) {
-    return <DisplayDictData data={data} error={error} />; 
+  if (loading) {
+    return <p>Wait a second...</p>;
   } else if (error) {
     return <ErrorMsg errorText={'Word not found'} />;
+  } else {
+    return <DisplayDictData data={data} error={error} />; 
   }
 };
 
