@@ -12,13 +12,13 @@ const DictInfo = (props) => {
   //set WordInfo - useEffect custom hook
   const { data, loading, error } = useDictSearch(baseUrl, searchWord);
 
-  if (loading) {
-    return <p>Wait a second...</p>;
-  } else if (error) {
-    return <ErrorMsg errorText={'Word not found'} />;
-  } else {
-    return <DisplayDictData data={data} error={error} />; 
-  }
+  return (
+    <>
+      {loading && <p>Wait a second...</p>}
+      {/* {error && <ErrorMsg errorText={'Word not found'} />} */}
+      <DisplayDictData data={data} error={error} />
+    </>
+  ); 
 };
 
 export default DictInfo;

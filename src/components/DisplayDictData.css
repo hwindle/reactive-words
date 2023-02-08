@@ -1,0 +1,12 @@
+section.card {
+  font-size: 1.2rem;
+}
+
+ul#dict-definitions > li {
+  list-style-type: none;
+}
+
+ul#dict-definitions > li::before {
+  margin-right: 15px;
+  content: '⚘';
+}
