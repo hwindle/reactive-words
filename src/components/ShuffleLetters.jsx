@@ -3,9 +3,9 @@ import ErrorMsg from './ErrorMsg';
 
 const ShuffleLetters = (props) => {
   let { searchWord } = props;
-  if (!searchWord) {
-    searchWord = 'Enter something';
-  }
+  // if (!searchWord) {
+  //   searchWord = 'Enter something';
+  // }
 
   const [firstLetterSet, setFirstLetterSet] = useState([]);
   const [shuffleArr, setShuffleArr] = useState([]);
