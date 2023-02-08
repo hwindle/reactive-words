@@ -34,11 +34,11 @@ const ThesInfo = (props) => {
       console.log('Still loading data...');
     }
 
-    if (error) {
-      setErrorMsg(() => {
-        'Error on MW API fetch: ';
-      });
-      console.log('hello from error');
+    if (error?.message) {
+      setErrorMsg(() => (
+        `Error on MW API fetch: ${error?.message}`
+      ));
+      //console.log('hello from error');
     }
     //console.log('hello outside of error, before return');
   }, [data, error]);
@@ -49,10 +49,10 @@ const ThesInfo = (props) => {
         {searchWord.toTitleCase}
       </h3>
       <div style={{ minWidth: '90%', maxWidth: '900px', margin: '2rem auto' }}>
-        {loading ? <p>Words Loading</p> : ''}
+        {loading && <p>Similar Words Loading</p>}
         <SynonymList synWords={synWords} />
         <AntonymList antonyms={antonyms} />
-        {errorMsg ? <ErrorMsg errorText={errorMsg} /> : ''}
+        {errorMsg && <ErrorMsg errorText={errorMsg} />}
       </div>
     </section>
   );

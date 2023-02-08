@@ -1,6 +1,6 @@
 import React from 'react';
 import useDictSearch from '../CustomHooks/useDictSearch';
-import ErrorMsg from './ErrorMsg';
+// import ErrorMsg from './ErrorMsg';
 import DisplayDictData from './DisplayDictData';
 
 const DictInfo = (props) => {

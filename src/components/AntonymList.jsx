@@ -8,10 +8,10 @@ const AntonymList = (props) => {
 
   return (
     <div>
-      <h4>Dissimilar Words</h4>
-      <ul>
+      <h4 style={{marginTop: 35, lineHeight: 2, textAlign: 'center', fontFamily: 'var(--body-font)', color: 'var(--orange)'}}>Dissimilar Words</h4>
+      <ul style={{maxWidth: '30rem', margin: '0 auto'}}>
         {words?.map((word, i) => {
-          return <li key={i}>{word}</li>
+          return <li key={i} style={{fontSize: '1.2rem', color: 'var(--coffee)', listStyleType: 'none', textAlign: 'center'}}>{word}</li>
         })}
       </ul>
     </div>
