@@ -1,8 +1,8 @@
 #app {
-  min-height: 75vh;
-  height: auto;
-  min-width: 90%;
+  min-height: 76vh;
+  /* height: auto; */
+  min-width: 85vw;
   max-width: 1200px;
   background-color: var(--light-beige);
-
+  padding: 0 0 2rem 0;
 }

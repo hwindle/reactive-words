@@ -3,6 +3,7 @@ import Heading from '../components/common/Heading';
 import ScrabbleInput from '../components/common/ScrabbleInput';
 import ErrorMsg from '../components/ErrorMsg';
 import ShuffleLetters from '../components/ShuffleLetters';
+import ScrabbleWords from '../components/ScrabbleWords';
 
 const Scrabble = () => {
   const [searchWord, setSearchWord] = useState('');
@@ -36,6 +37,7 @@ const Scrabble = () => {
       {/* Display error message box */}
       {errorMsg && <ErrorMsg errorText={errorMsg} />}
       <ShuffleLetters searchWord={searchWord} />
+      <ScrabbleWords />
     </main>
   );
 };

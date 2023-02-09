@@ -1,0 +1,31 @@
+div#favourite-scrabble-words {
+  margin: 1.5rem 0;
+}
+
+div#favourite-scrabble-words > h4.scrabble-words-heading {
+  text-align: center;
+  color: var(--coffee);
+  padding: 1rem;
+  line-height: 1.5;
+  font-family: var(--body-font);
+}
+
+p.fav-words-flex-wrap {
+  width: 40rem;
+  margin: var(--default-padding) auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+p.fav-words-flex-wrap > span {
+  padding: 0.4rem 0.8rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: white;
+  border-radius: var(--border-radius);
+}
+
+section#z-words, section#q-words {
+  color: var(--orange);
+}
