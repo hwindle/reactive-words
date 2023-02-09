@@ -9,7 +9,7 @@ const ScrabbleInput = (props) => {
           className='input-group-field {props.styleName}'
           type='text'
           id='text-search'
-          pattern='[A-Za-z?].+'
+          pattern='[A-Za-z].+'
           placeholder={props.placeholder} 
           onChange={props.onChangeHandler}
           required

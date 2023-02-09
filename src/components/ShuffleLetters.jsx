@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import ErrorMsg from './ErrorMsg';
+import './ShuffleLetters.css';
 
 const ShuffleLetters = (props) => {
   let { searchWord } = props;
@@ -30,13 +31,13 @@ const ShuffleLetters = (props) => {
   useEffect(() => {
     const strArr = searchWord.split();
     setFirstLetterSet([...strArr]);
-    // letterShuffler();
   }, [searchWord, letterShuffler]);
 
   return (
     <div>
-      <h3>Shuffled Letters</h3>
-      <table id="scrabble-letter-array">
+      <h3 style={{textAlign: 'center', fontFamily: 'var(--body-font)'}}>Shuffled Letters</h3>
+      <table id='scrabble-letter-array'>
+        <tbody>
         {!searchWord && <ErrorMsg errorText={'No scrabble letters entered'} />}
         {shuffleArr && shuffleArr.map(oneArr => oneArr)
           .map((letter, i) => (
@@ -44,6 +45,7 @@ const ShuffleLetters = (props) => {
               <td key={i} className='scrabble-mixed-up'>{letter}</td>
             </tr>
           ))}
+        </tbody>
       </table>
     </div>
   );
