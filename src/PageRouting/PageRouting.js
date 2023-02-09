@@ -31,9 +31,9 @@ const PageRouting = () => {
           <li className='tabs-title'>
             <Link to='/scrabble'>Scrabble</Link>
           </li>
-          <li className='tabs-title'>
+          {/* <li className='tabs-title'>
             <Link to='/word-meanings'>Word Meanings</Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
       {/* Specifying each page to load - like Django urls.py */}
@@ -41,7 +41,7 @@ const PageRouting = () => {
         <Route path='/' element={<Dict />} />
         <Route path='/thesaurus' element={<Thes />} />
         <Route path='/scrabble' element={<Scrabble />} />
-        <Route path='/word-meanings' element={<WordMeaning />} />
+        {/* <Route path='/word-meanings' element={<WordMeaning />} /> */}
         <Route path='*' element={<ErrorPage />} />
       </Routes>
     </Router>
