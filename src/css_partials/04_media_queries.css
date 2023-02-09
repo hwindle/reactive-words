@@ -1,0 +1,13 @@
+/*** mobile queries ***/
+@media screen and (max-width: 700px) {
+  nav#words-main-nav > ul > li.tabs-title {
+    display: block;
+    border-right: none;
+    border-radius: 0;
+  }
+
+  table#scrabble-letter-array,
+  p.fav-words-flex-wrap {
+    max-width: 90%;
+  }
+}
